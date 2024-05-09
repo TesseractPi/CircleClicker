@@ -16,8 +16,8 @@ In its default state, this is built for a 1920x1200 screen in fullscreen. Change
 #include <time.h> // just casually including ALL OF TIME
 #include <windows.h> // do some windows integration magic (i'll implement linux later)
 
-double center_x = 960.5;
-double center_y = 580.5;
+double center_x = 683.5;
+double center_y = 364.5;
 double radius = 256;
 
 double angle_increment = 1;
@@ -37,21 +37,22 @@ int getY(int YTheta) {
 int main(void) {
     std::cout << "Press A to draw a circle or Q to quit" << std::endl;
     while(true) {
-        if (GetKeyState('Q') & 0x8000) {
+        if (GetKeyState('Q') & 0x8000) { // when Q key pressed
             std::cout << "Goodbye!" << std::endl;
-            break;
+            return 69;
+            break; // end
         }
 
-        if (GetKeyState('A') & 0x8000) { // if the A key is pressed
-            SetCursorPos(center_x, (center_y + radius));
-            Sleep(250);
-            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+        if (GetKeyState('A') & 0x8000) { // when A key pressed
+            SetCursorPos(center_x, (center_y + radius)); // move mouse
+            Sleep(250); // wait 0.25 seconds
+            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0); // start holding mouse
             std::cout << "Circle started..." << std::endl;
             for(int c = 1; c <= angle_repeat; c++) {
-                SetCursorPos(getX(angle), getY(angle));
-                std::cout << "Point drawn at (" << getX(angle) << ", " << getY(angle) << ")" << std::endl;
+                SetCursorPos(getX(angle), getY(angle)); // move mouse
+                std::cout << "Point drawn at (" << getX(angle) << ", " << getY(angle) << ")" << std::endl; // log point
                 angle = angle + angle_increment;
-                Sleep(1); //uncomment to go slower
+                Sleep(1); // change to go slower
             }
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
             std::cout << "Circle complete!" << std::endl;
