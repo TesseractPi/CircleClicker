@@ -11,13 +11,13 @@
 
 import time # just casually bringing in the tardis
 import tkinter as tk # to get screen width and height
-from win10toast import ToastNotifier # to send notifications
+import win10toast # to send notifications
 import pyautogui # so we can click the mouse
 import keyboard # to detect keypresses
 import math # to do some circle stuff
 
 ### Win10Toast Setup ###
-toast = ToastNotifier() # set up win10toast
+toast = win10toast.ToastNotifier() # set up win10toast
 
 ### Screen width stuff ###
 root = tk.Tk() # set up tkinter
@@ -45,7 +45,7 @@ def getXY(thetaThing):
     y = (radius * math.cos(math.pi * 2 * angle / 360)) + center_y
     return (x, y)
 
-print("Press A to start circling, or press Q to quit")
+print("Press A to draw a circle, or press Q to quit")
 
 while True:
     if keyboard.is_pressed('q'):
@@ -60,9 +60,9 @@ while True:
         print("Circle started... ") # just to add some flair
         for i in range(angle_repeat):
             pyautogui.moveTo(getXY(angle))
-            print(getXY(angle)) # for debugging purposes and to look cool
+            print("Point drawn at " + getXY(angle)) # for debugging purposes and to look cool
             angle = angle + angle_increment # just add a little to the circle each time
         pyautogui.mouseUp() # release the mouse
-        print("Circle finished! Press A to draw again or Q to quit") # you won't be looking at this anyway
-        notify("Circle finished!", "Press A to draw another one or press Q to quit.") # you'll be looking at this
+        print("Circle finished! Press A to draw another circle or Q to quit") # you won't be looking at this anyway
+        notify("Circle finished!", "Press A to draw another circle or press Q to quit.") # you'll be looking at this
         #break
