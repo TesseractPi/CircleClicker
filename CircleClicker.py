@@ -66,3 +66,4 @@ while True:
         print("Circle finished! Press A to draw another circle or Q to quit") # you won't be looking at this anyway
         notify("Circle finished!", "Press A to draw another circle or press Q to quit.") # you'll be looking at this
         #break
+# this line is here to be 69 lines long and the last char here is 69
