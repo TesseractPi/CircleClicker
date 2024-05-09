@@ -12,7 +12,7 @@ To change the location of the center of the circle, edit the `center_y` variable
 ****
 
 ### Python script
-#### Dependencies: 
+This script has the following dependencies (install with pip): 
 - Time
 - Tkinter
 - Win10Toast
@@ -23,9 +23,4 @@ To change the location of the center of the circle, edit the `center_y` variable
 ****
 
 ### C++ Script
-#### Dependencies: 
-- MinGW on Windows
-- <Windows.h>
-
-#### Notes
-Doesn't work on Linux... yet. 
+This #includes <Windows.h> and I don't know how to click things or detect keys on Linux, so it would be nice if someone who knows how to do that on Linux could submit a pull request. 
