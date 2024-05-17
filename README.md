@@ -22,5 +22,10 @@ This script has the following dependencies (install with pip):
 
 ****
 
-### C++ Script
+### C++ script
 This #includes <Windows.h> and I don't know how to click things or detect keys on Linux, so it would be nice if someone who knows how to do that on Linux could submit a pull request. 
+
+****
+
+### Bash script
+This is an incomplete version of CircleClicker written in Bash. It (will) use `xdotool` to move the mouse. 
