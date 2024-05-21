@@ -28,4 +28,4 @@ This #includes <Windows.h> and I don't know how to click things or detect keys o
 ****
 
 ### Bash script
-This is an incomplete version of CircleClicker written in Bash. It uses `xdotool` to move the mouse. 
+This is a port of CircleClicker written in Bash. It uses `xdotool` to move the mouse. To run this, you need `xdotool` installed. 
