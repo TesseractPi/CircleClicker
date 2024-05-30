@@ -60,7 +60,7 @@ while True:
         print("Circle started... ") # just to add some flair
         for i in range(angle_repeat):
             pyautogui.moveTo(getXY(angle))
-            print("Point drawn at " + getXY(angle)) # for debugging purposes and to look cool
+            print(getXY(angle)) # for debugging purposes and to look cool
             angle = angle + angle_increment # just add a little to the circle each time
         pyautogui.mouseUp() # release the mouse
         print("Circle finished! Press A to draw another circle or Q to quit") # you won't be looking at this anyway
